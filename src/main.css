@@ -60,24 +60,29 @@ header {
   position: relative;
   /* margin-bottom: 10px; */
   width: 100%;
-  height: 80px;
+  /* height: 80px; */
   box-shadow: 0 0px 15px gray;
   /* z-index: 15; */
 }
 header > .container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding: 5px 0;
   height: 100%;
 }
 header > .container > .title {
   height: fit-content;
+  width: min-content;
+  text-decoration: none;
 }
 header > .container > .title > h1 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   letter-spacing: 0.01em;
-  font-size: 2em;
+  font-size: 1.5em;
   cursor: pointer;
 }
 header > .container > .title > h1 > span {
@@ -92,19 +97,38 @@ header > .container > .title > h1 > span:nth-child(2) {
   color: #00ccff;
   text-shadow: 1px 0 lightblue, -1px 0 lightblue, 0 1px lightblue, 0 -1px lightblue;
 }
-header > .container > .title > h1 > span:nth-child(3) {
+header > .container > .title > h1 > span:nth-of-type(3) {
   padding: 10px 15px;
-  margin-top: -10px;
+  /* margin-top: -10px; */
   background-color: #003366;
   color: white;
   border: 2px solid white;
   border-radius: 80% 80% 15px 15px;
 }
 header > .container > .title > h1 > img {
+  display: none;
   height: 60px;
+}
+header > .container > nav > label {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+header > .container > nav > label > svg {
+  width: 40px;
+  height: 40px;
+}
+header > .container > nav > input {
+  display: none;
+}
+header > .container > nav > input:checked ~ ul {
+  display: none;
 }
 header > .container > nav > ul {
   display: flex;
+  background-color: white;
   list-style: none;
 }
 header > .container > nav > ul > li {
@@ -136,13 +160,13 @@ main > .gallery > h2 {
   margin: 15px 25%;
   width: 50%;
   border-bottom: 1px solid black;
-  font-size: 3em;
+  font-size: 2em;
   text-align: center;
 }
 main > .gallery > img {
   align-self: center;
   margin: 1%;
-  max-width: 400px;
+  max-width: 150px;
   height: min-content;
   filter: grayscale(80%);
   transition: filter 0.3s;
@@ -161,12 +185,13 @@ main > .prices > h2 {
   margin: 15px 25%;
   width: 50%;
   border-bottom: 1px solid black;
-  font-size: 3em;
+  font-size: 2em;
   text-align: center;
 }
 main > .prices > .card {
   padding: 5px 10px;
-  width: 400px;
+  margin: 5px;
+  width: 300px;
   height: fit-content;
   background-color: white;
   border: 1px solid lightgray;
@@ -177,6 +202,9 @@ main > .prices > .card > * {
 }
 main > .prices > .card > h3 {
   font-size: 2em;
+}
+main > .prices > .card > ol {
+  list-style-position: inside;
 }
 /* main > .prices > .card > p:nth-child(2) {
   font-size: 1.2em;
@@ -202,19 +230,20 @@ main > .aboutus > h2 {
   margin: 15px 25%;
   width: 50%;
   border-bottom: 1px solid black;
-  font-size: 3em;
+  font-size: 2em;
   text-align: center;
-}
-main > .aboutus > video {
-  display: inline;
-  width: 30%;
 }
 main > .aboutus > p {
   display: inline;
-  padding: 30px;
-  width: 70%;
-  font-size: 2em;
+  padding: 0 15px;
+  width: 100%;
+  font-size: 1.5em;
   letter-spacing: 0.05em;
+}
+main > .aboutus > p > video {
+  float: left;
+  margin: 5px 15px 5px 5px;
+  width: 50%;
 }
 main > .contact {
   display: flex;
@@ -231,7 +260,11 @@ main > .contact > h2 {
 main > .contact > form {
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
+  padding: 10px;
+  width: 100%;
+}
+main > .contact > form > h3{
+  padding: 10px 20px;
 }
 main > .contact > form > input,
 main > .contact > form > textarea,
@@ -239,7 +272,7 @@ main > .contact > form > button {
   padding-left: 10px;
   padding-right: 10px;
   margin: 5px 0;
-  width: calc(100% - 20px);
+  width: 100%;
   border: 1px solid lightgray;
   border-radius: 5px;
   background-color: transparent;
@@ -267,13 +300,13 @@ main > .contact > ul {
   justify-content: center;
   align-items: center;
   padding: 10px 0;
-  width: 50%;
+  width: 100%;
   /* background-color: red; */
   list-style: none;
 }
 main > .contact > ul > li {
-  width: 55%;
-  /* margin: 15px 0; */
+  width: 100%;
+  margin: 10px 0;
 }
 main > .contact > ul > li > a {
   display: flex;

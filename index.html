@@ -12,11 +12,17 @@
   <body>
     <header>
       <div class="container">
-        <div class="title">
+        <a href="./" class="title">
           <h1><span>ALEX</span> <span>POOL</span> <span>CLEANING</span> <img src="src/media/gotas.png" alt="gotas" /></h1>
-        </div>
+        </a>
 
         <nav>
+          <label for="toggle-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+          </label>
+          <input type="checkbox" name="toggle-menu" id="toggle-menu" checked>
           <ul>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#prices">Prices</a></li>
@@ -36,6 +42,7 @@
         <img src="src/media/img4.jpg" alt="Image 2" />
         <img src="src/media/img5.jpg" alt="Image 3" />
       </div>
+
       <div class="container prices" id="prices">
         <h2>Prices</h2>
         <div class="card">
@@ -58,13 +65,16 @@
           <button>Set an Appoitment</button>
         </div>
       </div>
+
       <div class="container aboutus" id="aboutus">
         <h2>About Me</h2>
+        <p>
         <video autoplay muted loop>
           <source src="src/media/MyVideo.mp4">
         </video>
-        <p>Hey! it's me Alex, Appreciated to be part of this cleanning process!, I have been cleanning tons of pools in Florida Miami for arround 5 years in a row, Satifying all my customers by doing an excellent pool cleanning, what are you waiting for?, check out the plans I can offfer you and reach me out, I will be more than happy cleanning your pool.</p>
+        Hey! it's me Alex, Appreciated to be part of this cleanning process!, I have been cleanning tons of pools in Florida Miami for arround 5 years in a row, Satifying all my customers by doing an excellent pool cleanning, what are you waiting for?, check out the plans I can offfer you and reach me out, I will be more than happy cleanning your pool.</p>
       </div>
+
       <div class="container contact" id="contact">
         <h2>Contact</h2>
         <form onsubmit="(e)=>{
