@@ -15,46 +15,11 @@ body {
 
 .container {
   margin: 0 auto;
+  width: 100%;
   min-height: 50px;
 }
 
-@media (max-width: 576px) {
-  .container {
-    width: 100%;
-  }
-}
-
-@media (min-width: 576px) {
-  .container {
-    width: 540px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width: 1140px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .container {
-    width: 1320px;
-  }
-}
-
-/* Contenido del Header */
+/* Estilos del Header */
 header {
   background-color: white;
   position: relative;
@@ -166,9 +131,9 @@ main > .gallery > h2 {
 main > .gallery > img {
   align-self: center;
   margin: 1%;
-  max-width: 150px;
+  max-width: 45%;
   height: min-content;
-  filter: grayscale(80%);
+  filter: grayscale(90%);
   transition: filter 0.3s;
 }
 main > .gallery > img:hover {
@@ -340,4 +305,39 @@ footer > .container {
 footer > .container > div {
   width: 50%;
   text-align: center;
+}
+
+
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+  
+  main > .gallery > img {
+    max-width: 150px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    width: 1320px;
+  }
 }
