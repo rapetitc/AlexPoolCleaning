@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Comfortaa", cursive;
+  max-width: 100%;
+}
+
+h1 {
+  font-family: Tahoma;
+}
+
+.link {
+  color: rgb(27, 27, 27);
+  text-decoration: none;
+}
+.link:hover {
+  color: rgb(54, 54, 54);
+  text-decoration: underline;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  min-height: 50px;
+}
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    width: 1320px;
+  }
+}

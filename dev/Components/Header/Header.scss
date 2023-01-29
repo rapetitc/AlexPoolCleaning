@@ -1,0 +1,139 @@
+header {
+  background-color: white;
+  width: 100%;
+  box-shadow: 0px 0px 15px gray;
+
+  > div.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5px 0;
+
+    > div.title {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      right: calc(-45px / 2);
+      height: max-content;
+      width: calc(100% - 45px);
+      text-decoration: none;
+
+      > h1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: min-content;
+        letter-spacing: 0.01em;
+        font-size: 1.5em;
+        cursor: pointer;
+
+        > span {
+          margin: 0 3px;
+
+          &:nth-child(1) {
+            color: #003366;
+            font-weight: 600;
+            text-shadow: 1px 0 lightblue, -1px 0 lightblue, 0 1px lightblue, 0 -1px lightblue;
+          }
+          &:nth-child(2) {
+            color: #00ccff;
+            text-shadow: 1px 0 lightblue, -1px 0 lightblue, 0 1px lightblue, 0 -1px lightblue;
+          }
+          &:nth-child(3) {
+            padding: 10px 15px;
+            background-color: #003366;
+            color: white;
+            border: 2px solid white;
+            border-radius: 80% 80% 15px 15px;
+          }
+        }
+        > img {
+          display: none;
+          height: 60px;
+        }
+      }
+    }
+    > button.toggle-menu {
+      display: block;
+      margin: 0 5px;
+      height: 35px;
+      width: 35px;
+      background: transparent;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 5;
+
+      > svg {
+        width: max-content;
+        height: max-content;
+      }
+    }
+    > nav.menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      height: 0;
+      max-height: 50px;
+      width: 100%;
+      overflow: hidden;
+
+      > ul {
+        display: flex;
+        background-color: white;
+        list-style: none;
+
+        > li {
+          font-size: 1.2em;
+          margin: 15px 10px;
+
+          > a {
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    > nav.menu.active {
+      height: max-content;
+
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  header {
+    > div.container {
+      > div.title {
+        > h1 {
+          width: max-content;
+          > img {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  header {
+    > div.container {
+      justify-content: space-between;
+
+      > div.title {
+        width: max-content;
+      }
+      > button.toggle-menu {
+        display: none;
+      }
+      > nav.menu {
+        height: 50px;
+        width: max-content;
+      }
+    }
+  }
+}

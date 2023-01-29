@@ -1,0 +1,98 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 15px;
+  width: 100%;
+  min-height: calc(100vh - 200px);
+
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: min-content;
+
+    > h2 {
+      padding: 10px 0px;
+      margin: 15px 25%;
+      width: 50%;
+      border-bottom: 1px solid black;
+      font-size: 2em;
+      text-align: center;
+    }
+  }
+  div.gallerySection {
+    width: 100%;
+  }
+  div.aboutusSection {
+    width: 100%;
+
+    > p {
+      display: inline;
+      padding: 0 15px;
+      max-width: 800px;
+      font-size: 1.2em;
+      letter-spacing: 0.05em;
+
+      > video {
+        float: left;
+        margin: 5px 15px 5px 5px;
+        width: 50%;
+        max-width: 300px;
+      }
+    }
+  }
+
+  div.contactSection {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    > ul {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 10px;
+      width: min-content;
+      list-style: none;
+
+      > li {
+        width: max-content;
+        margin: 10px 0;
+        > a {
+          display: flex;
+          align-items: center;
+          color: #003366;
+          text-decoration: none;
+          font-size: 1.5em;
+
+          > * {
+            margin: 0 10px;
+          }
+          svg {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  main {
+    div.aboutusSection {
+      width: 50%;
+      max-width: 500px;
+
+      > p {
+        font-size: 1.3em;
+      }
+    }
+    div.contactSection {
+      width: 50%;
+      max-width: 500px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+div.Gallery {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  div.ImgsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    img {
+      margin: 5px;
+      height: auto;
+      width: calc(50% - 10px);
+      max-width: 200px;
+      cursor: pointer;
+      transition: border-radius 0.3s;
+
+      &:hover {
+        border-radius: 20px;
+      }
+    }
+  }
+}
