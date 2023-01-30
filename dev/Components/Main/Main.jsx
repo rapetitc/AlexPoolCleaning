@@ -7,10 +7,10 @@ import { FSContext } from "../../Context/FSContext";
 
 const Main = () => {
   const [urlVideo, setUrlVideo] = useState("");
-  const { getImgFrom } = useContext(FSContext);
+  const { getFileFrom } = useContext(FSContext);
 
   useEffect(() => {
-    getImgFrom("media/MyVideo.mp4").then((url) => {
+    getFileFrom("media/MyVideo.mp4").then((url) => {
       setUrlVideo(url);
     });
   }, []);
@@ -24,7 +24,7 @@ const Main = () => {
       <div className='aboutusSection' id='aboutus'>
         <h2>About Me</h2>
         <p>
-          <video src={urlVideo} autoPlay muted loop></video>
+          <video src={urlVideo.url} autoPlay muted loop></video>
           Hey! it's me Alex, Appreciated to be part of this cleanning process!, I have been cleanning tons of pools in Florida Miami for arround 5 years in a row, Satifying all my customers by doing an excellent pool cleanning, what are you waiting for?, check out the plans I can offer you and reach me out, I will be more than happy cleanning your pool.
         </p>
       </div>

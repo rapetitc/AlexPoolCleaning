@@ -1,27 +1,27 @@
 import React, { createContext } from "react";
 import { ref, getDownloadURL, listAll } from "firebase/storage";
-import { storage } from "../src/FB";
+import { storage } from "../src/fbconfig";
 
 export const FSContext = createContext();
 const FSProvider = ({ children }) => {
-  const getImgFrom = async (path) => {
-    const reference = ref(storage, path);
+  const getFileFrom = async (filepath) => {
+    const reference = ref(storage, filepath);
     const url = await getDownloadURL(reference);
-    return url;
+    return { title: reference.name, url: url };
   };
 
-  const getAllImgsFrom = async (folderPath) => {
+  const getFilesFrom = async (folderPath) => {
     const referenceList = ref(storage, folderPath);
     const list = await listAll(referenceList);
     const urls = [];
-    for (const iterator of list.items) {
-      const url = await getDownloadURL(iterator);
-      urls.push(url);
+    for (const item of list.items) {
+      const url = await getDownloadURL(item);
+      urls.push({ title: item.name, url: url });
     }
     return urls;
   };
 
-  const value = { getImgFrom, getAllImgsFrom };
+  const value = { getFileFrom, getFilesFrom };
 
   return <FSContext.Provider value={value}>{children}</FSContext.Provider>;
 };

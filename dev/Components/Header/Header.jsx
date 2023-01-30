@@ -4,7 +4,7 @@ import "./Header.scss";
 import { FSContext } from "../../Context/FSContext";
 
 const Header = () => {
-  const { getImgFrom } = useContext(FSContext);
+  const { getFileFrom } = useContext(FSContext);
   const [gotasUrl, setGotasUrl] = useState("");
   const [isMenuActive, setIsMenuActive] = useState(false);
 
@@ -13,7 +13,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    getImgFrom("media/gotas.png").then((url) => {
+    getFileFrom("media/gotas.png").then((url) => {
       setGotasUrl(url);
     });
   }, []);
@@ -24,7 +24,7 @@ const Header = () => {
         <div className='title'>
           <h1>
             <span>ALEX</span> <span>POOL</span> <span>CLEANING</span>
-            <img src={gotasUrl} alt='gotas' />
+            <img src={gotasUrl.url} alt='gotas' />
           </h1>
         </div>
         <button
@@ -40,13 +40,19 @@ const Header = () => {
         <nav className={isMenuActive ? "menu active" : "menu"}>
           <ul>
             <li>
-              <a href='#gallery' className="link">Gallery</a>
+              <a href='#gallery' className='link'>
+                Gallery
+              </a>
             </li>
             <li>
-              <a href='#aboutus' className="link">About Me</a>
+              <a href='#aboutus' className='link'>
+                About Me
+              </a>
             </li>
             <li>
-              <a href='#contact' className="link">Contact</a>
+              <a href='#contact' className='link'>
+                Contact
+              </a>
             </li>
           </ul>
         </nav>
