@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./Gallery.scss";
 
-import { FSContext } from "../../../Context/FSContext";
+import { FSContext } from "../../Context/FSContext";
 
 const Gallery = () => {
   const { getFilesFrom } = useContext(FSContext);

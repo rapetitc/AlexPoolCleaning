@@ -1,7 +1,5 @@
-const path = require('path')
-const HTMLWebpackPlugin = require('html-webpack-plugin')
-//import * as path from 'path'
-//import * as HTMLWebpackPlugin from 'html-webpack-plugin'
+const path = require("path");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 //Configurations:
 const isInDevMode = true;
@@ -11,43 +9,44 @@ const rulesForJSX = {
   test: /\.(js|jsx)$/,
   exclude: /node_modules/,
   use: {
-    loader: "babel-loader"
-  }
-}
+    loader: "babel-loader",
+  },
+};
 const rulesForFiles = {
   test: /\.(png|jpe?g|svg|mp4)$/,
-  type: 'asset/resource'
-}
+  type: "asset/resource",
+};
 const rulesForSASS = {
   test: /\.scss$/,
-  use: ['style-loader', 'css-loader', 'sass-loader']
-}
-
+  use: ["style-loader", "css-loader", "sass-loader"],
+};
 
 module.exports = {
-  mode: isInDevMode ? 'development' : 'production',
-  entry: './dev/index.js',
+  mode: isInDevMode ? "development" : "production",
+  entry: "./src/index.js",
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname + '/build'),
+    filename: "bundle.js",
+    path: path.resolve(__dirname + "/build"),
   },
   module: {
-    rules: [rulesForJSX, rulesForSASS, rulesForFiles]
+    rules: [rulesForJSX, rulesForSASS, rulesForFiles],
   },
-  plugins: [new HTMLWebpackPlugin({
-    template: './public/index.html',
-    inject: "body",
-    favicon: './public/favicon.ico',
-  })],
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: "./public/index.html",
+      inject: "body",
+      favicon: "./public/favicon.ico",
+    }),
+  ],
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
-    modules: [path.resolve(__dirname, '/dev'), 'node_modules']
+    extensions: [".js", ".jsx", ".json"],
+    modules: [path.resolve(__dirname, "/src"), "node_modules"],
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, '/dev'),
+      directory: path.join(__dirname, "/src"),
     },
     compress: true,
     port: 9900,
   },
-}
+};

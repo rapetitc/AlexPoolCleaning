@@ -1,6 +1,6 @@
 import React, { createContext } from "react";
 import { ref, getDownloadURL, listAll } from "firebase/storage";
-import { storage } from "../src/fbconfig";
+import { storage } from "../config/firebase_config";
 
 export const FSContext = createContext();
 const FSProvider = ({ children }) => {
