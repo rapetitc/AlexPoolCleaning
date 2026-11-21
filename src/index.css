@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+/* Tokens de tema y tipografía para Tailwind v4 */
+@theme {
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-navy: #06355f;
+  --color-aqua: #19b5f0;
+  --color-foam: #5fd1ff;
+
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg: #f2fafe;
+    --card: #ffffff;
+    --ink: #0b2540;
+    --muted: #456078;
+    --line: #cfe6f2;
+    color-scheme: light;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #07182a;
+      --card: #0d2740;
+      --ink: #eaf6fd;
+      --muted: #9fbcd0;
+      --line: #1b3d5c;
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #07182a;
+    --card: #0d2740;
+    --ink: #eaf6fd;
+    --muted: #9fbcd0;
+    --line: #1b3d5c;
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 80px);
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto;
+    height: env(safe-area-inset-top, 0px);
+    background: #06355f;
+    z-index: 60;
+  }
+
+  :focus-visible {
+    outline: 3px solid #19b5f0;
+    outline-offset: 3px;
+  }
+
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      transition: none !important;
+    }
+  }
+}
+
+@layer components {
+  .chip input:checked + span {
+    background: #19b5f0;
+    color: #06355f;
+    border-color: #19b5f0;
+  }
+
+  .chip input:focus-visible + span {
+    outline: 3px solid #19b5f0;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Reflejos de luz en el agua */
+  .water {
+    background:
+      radial-gradient(
+        ellipse 40% 30% at 15% 20%,
+        rgba(255, 255, 255, 0.28),
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 35% 25% at 70% 15%,
+        rgba(95, 209, 255, 0.45),
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 45% 35% at 85% 70%,
+        rgba(255, 255, 255, 0.18),
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 30% 20% at 30% 80%,
+        rgba(25, 181, 240, 0.5),
+        transparent 70%
+      ),
+      linear-gradient(160deg, #0a4f86 0%, #06355f 100%);
+  }
+
+  .tile-a {
+    background:
+      radial-gradient(
+        ellipse at 30% 25%,
+        rgba(255, 255, 255, 0.55),
+        transparent 55%
+      ),
+      linear-gradient(135deg, #19b5f0, #0a4f86);
+  }
+
+  .tile-b {
+    background:
+      radial-gradient(
+        ellipse at 70% 30%,
+        rgba(255, 255, 255, 0.5),
+        transparent 55%
+      ),
+      linear-gradient(135deg, #5fd1ff, #0b6fa8);
+  }
+
+  .tile-c {
+    background:
+      radial-gradient(
+        ellipse at 40% 70%,
+        rgba(255, 255, 255, 0.45),
+        transparent 55%
+      ),
+      linear-gradient(135deg, #2dc6d6, #06355f);
+  }
+}
