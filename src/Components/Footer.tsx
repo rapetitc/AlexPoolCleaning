@@ -80,7 +80,7 @@ function Footer() {
         <span className="hidden sm:inline" aria-hidden="true">
           ·
         </span>
-        <p>Developed by @rapetitc</p>
+        <p>Developed by <a className="cursor-pointer hover:underline" href="http://rualpeca.com" target="_blank" >@rapetitc</a></p>
       </div>
     </footer>
   );
